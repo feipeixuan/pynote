@@ -3,7 +3,10 @@ import socket
 
 with socket.socket(socket.AF_INET,socket.SOCK_STREAM) as client:
     client.connect(("127.0.0.1",9500))
+    client.send("aaa".encode())
     data = client.recv(1024)
+    while True:
+        pass
 
 print('Received', repr(data))
 # 1024 是缓冲区数据大小限制最大值参数 bufsize，

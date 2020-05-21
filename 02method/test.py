@@ -8,6 +8,7 @@ class Person:
 a=Person.get_info
 print (a)
 a(Person())
+a()
 # bound method Person.get_info
 b=Person().get_info
 print (b)
