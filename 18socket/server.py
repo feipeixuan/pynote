@@ -3,13 +3,14 @@ import socket
 
 with socket.socket(socket.AF_INET,socket.SOCK_STREAM) as server:
     server.bind(("127.0.0.1",9500))
-    server.listen(2)
+    server.listen(1)
     conn, addr = server.accept()
     with conn:
         print('Connected by', addr)
-        conn.sendall("kkkk".encode("utf-8"))
+        # conn.sendall("kkkk".encode("utf-8"))
         while True:
             data = conn.recv(1024)
+            print(data)
             if not data:
                 break
             conn.sendall(data)
